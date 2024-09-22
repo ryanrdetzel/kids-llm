@@ -88,17 +88,7 @@ app.get("/", (c) => {
             </form>
           </div>
           <div className="mt-4 text-center text-sm text-gray-500 flex items-center justify-center">
-            <span className="mr-2 pt-2">Powered by</span>
-            <a
-              href="https://developers.cloudflare.com/workers-ai/"
-              target="_blank"
-            >
-              <img
-                src="/static/cloudflare-logo.png"
-                alt="Cloudflare Logo"
-                className="h-6 inline"
-              />
-            </a>
+            Hello
           </div>
         </div>
       </div>
@@ -109,6 +99,7 @@ app.get("/", (c) => {
 
 app.post("/api/chat", async (c) => {
   const payload = await c.req.json();
+
   const messages = [...payload.messages];
   // Prepend the systemMessage
   if (payload?.config?.systemMessage) {
